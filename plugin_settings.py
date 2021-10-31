@@ -31,9 +31,6 @@ class MailchimpPlugin(plugins.Plugin):
 
 def install():
     MailchimpPlugin.install()
-    update_settings(
-        file_path='plugins/typesetting/install/settings.json'
-    )
 
 
 def hook_registry():
