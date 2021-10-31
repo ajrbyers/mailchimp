@@ -1,0 +1,32 @@
+[
+  {
+    "group": {
+      "name": "email"
+    },
+    "setting": {
+      "description": "Email sent to Typesetter on task assignment.",
+      "is_translatable": true,
+      "name": "typesetting_notify_typesetter",
+      "pretty_name": "Typesetter Assignment Notification (PLUGIN)",
+      "type": "rich-text"
+    },
+    "value": {
+      "default": "<p>Dear {{ assignment.typesetter.full_name }},</p><p>This is a notification from {{ request.user.full_name }} that you have been assigned to the production of article {{ assignment.round.article.title }} on journal {{ request.journal.name }}. </p><p>You can view further information on this assignment: {{ typesetting_assignments_url }}.</p><p>Regards,</p><p>{{ request.user.signature|safe }}</p>"
+    }
+  },
+  {
+    "group": {
+      "name": "email"
+    },
+    "setting": {
+      "description": "Email sent to Typesetter on task assignment.",
+      "is_translatable": true,
+      "name": "typesetting_notify_typesetter",
+      "pretty_name": "Typesetter Assignment Notification (PLUGIN)",
+      "type": "rich-text"
+    },
+    "value": {
+      "default": "<p>Dear {{ assignment.typesetter.full_name }},</p><p>This is a notification from {{ request.user.full_name }} that you have been assigned to the production of article {{ assignment.round.article.title }} on journal {{ request.journal.name }}. </p><p>You can view further information on this assignment: {{ typesetting_assignments_url }}.</p><p>Regards,</p><p>{{ request.user.signature|safe }}</p>"
+    }
+  }
+]
