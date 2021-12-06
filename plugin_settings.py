@@ -11,9 +11,9 @@ SHORT_NAME = 'mailchimp'
 MANAGER_URL = 'mailchimp_manager'
 JANEWAY_VERSION = "1.4.0"
 
-API_KEY = 'e55a4d5eb104d494aaee007ee499e4d3-us5'
-SERVER_PREFIX = 'us5'
-LIST_ID = 'b456240aa7'
+API_KEY = ''
+SERVER_PREFIX = ''
+LIST_ID = ''
 
 
 class MailchimpPlugin(plugins.Plugin):
