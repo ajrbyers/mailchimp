@@ -1,24 +1,34 @@
-{% extends "admin/core/base.html" %}
+{% extends "core/base.html" %}
+{% load foundation %}
 
 {% block title %}Notification Signup{% endblock %}
 
 {% block body %}
-<div class="box">
-    <div class="title-area">
-        <h2>Notification Signup</h2>
-    </div>
-    <div class="content">
-        <p>By pressing the signup button below you are agreeing to be added to our notification list. We will send you emails when new papers or issues are published.</p>
-        <p>Your details will be used solely for notifications from {{ request.journal.name }} and for no other purpose. </p>
-        <form method="POST">
-            {% csrf_token %}
-            {% if api_error %}
-                <p><strong>{{ api_error|safe }}</strong></p>
-            {% else %}
-                <button class="button">Sign Up</button>
-            {% endif %}
+    <div class="box">
+        <div class="content{% if request.journal and journal_settings.general.journal_theme == 'OLH' or request.press.theme == 'olh' %} row{% endif %}">
+            <div class="title-area">
+                <h2>Notification Signup</h2>
+            </div>
+            <p>By pressing the signup button below you are agreeing to be added to our notification list. We will send
+                you emails when new papers or issues are published.</p>
+            <p>Your details will be used solely for notifications from {{ request.journal.name }} and for no other
+                purpose. </p>
+            <form method="POST">
+                {% csrf_token %}
 
-        </form>
+                {% if api_error %}
+                    <p><strong>{{ api_error|safe }}</strong></p>
+                {% endif %}
+
+                {% if request.user.is_authenticated %}
+                    <button class="button btn btn-primary">Sign Up</button>
+                {% else %}
+                    {{ form|foundation }}
+                    <button class="button btn btn-primary">Sign Up</button>
+                {% endif %}
+
+            </form>
+            <br/>
+        </div>
     </div>
-</div>
 {% endblock body %}
